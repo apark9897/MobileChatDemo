@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, FlatList, SafeAreaView } from 'react-native';
-import { useRoute } from '@react-navigation/native';
+import { useFocusEffect, useRoute } from '@react-navigation/native';
 import Message from '../components/Message';
 import chatRoomData from '../assets/dummy-data/Chats';
 import MessageInput from '../components/MessageInput';
@@ -11,7 +11,9 @@ export default function ChatRoomScreen() {
   const navigation = useNavigation();
 
   console.warn("Displaying chat room: ", route.params?.id);
-  navigation.setOptions({title: 'Elon Musk'});
+  React.useEffect(() => {
+    navigation.setOptions({title: 'Elon Musk'});
+  })
   return (
     <SafeAreaView style={styles.page}>
       <FlatList

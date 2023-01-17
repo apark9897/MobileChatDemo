@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mobilechatdemo-staging-55344-authRole",
+      "UnauthRoleArn": "arn:aws:iam::613187931965:role/amplify-mobilechatdemo-staging-55344-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::613187931965:role/amplify-mobilechatdemo-staging-55344-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-mobilechatdemo-staging-55344-deployment",
+      "UnauthRoleName": "amplify-mobilechatdemo-staging-55344-unauthRole",
+      "StackName": "amplify-mobilechatdemo-staging-55344",
+      "StackId": "arn:aws:cloudformation:us-east-1:613187931965:stack/amplify-mobilechatdemo-staging-55344/2328bf40-9562-11ed-819c-0e74c018307b",
+      "AmplifyAppId": "d12nj6t716f08e"
+    },
+    "categories": {
+      "auth": {
+        "MobileChatDemo": {}
+      }
+    }
+  }
+}
