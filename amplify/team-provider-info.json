@@ -19,7 +19,7 @@
       "function": {
         "MobileChatDemoPostConfirmation": {
           "deploymentBucketName": "amplify-mobilechatdemo-staging-55344-deployment",
-          "s3Key": "amplify-builds/MobileChatDemoPostConfirmation-46445242345249536a58-build.zip"
+          "s3Key": "amplify-builds/MobileChatDemoPostConfirmation-4f6b32422f7668726e6b-build.zip"
         }
       },
       "api": {
