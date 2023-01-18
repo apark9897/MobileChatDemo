@@ -20,4 +20,4 @@ type Users @model @auth(rules: [{allow: public}]) {
   status: String
   Messages: [Messages] @hasMany(indexName: "byUsers", fields: ["id"])
   ChatRooms: [ChatRooms] @manyToMany(relationName: "UsersChatRooms")
-}
+} 
