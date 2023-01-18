@@ -1,9 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, useWindowDimensions } from 'react-native';
+import { View, Text, StyleSheet, Image, useWindowDimensions, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Feather } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 const HomeHeader = (props) => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.headerContainer}>
       <View style={styles.profilePicture}>
@@ -20,7 +22,9 @@ const HomeHeader = (props) => {
       </View>
       <View style={styles.headerIconContainer}>
         <Feather name="camera" size={24} color="white" style={{ paddingHorizontal: 12 }} />
-        <Feather name="edit-2" size={24} color="white" style={{ paddingHorizontal: 2 }} />
+        <Pressable onPress={() => navigation.navigate('UsersScreen')}>
+          <Feather name="edit-2" size={24} color="white" style={{ paddingHorizontal: 2 }} />
+        </Pressable>
       </View>
     </SafeAreaView>
   )

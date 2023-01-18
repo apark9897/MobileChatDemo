@@ -14,6 +14,7 @@ import HomeScreen from '../screens/HomeScreen';
 import HomeHeader from '../components/HomeHeader';
 import ChatRoomScreen from '../screens/ChatRoomScreen';
 import ChatRoomHeader from '../components/ChatRoomHeader';
+import UsersScreen from '../screens/UsersScreen';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -44,10 +45,11 @@ function RootNavigator() {
         component={ChatRoomScreen}
         options={{ header: (props) => <ChatRoomHeader {...props} />}}
       />
-      <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
-      <Stack.Group screenOptions={{ presentation: 'modal' }}>
-        <Stack.Screen name="Modal" component={ModalScreen} />
-      </Stack.Group>
+      <Stack.Screen
+        name="UsersScreen"
+        component={UsersScreen}
+        options={{ title: 'Users'}}
+      />
     </Stack.Navigator>
   );
 }
