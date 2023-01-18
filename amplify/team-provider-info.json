@@ -9,10 +9,20 @@
       "UnauthRoleName": "amplify-mobilechatdemo-staging-55344-unauthRole",
       "StackName": "amplify-mobilechatdemo-staging-55344",
       "StackId": "arn:aws:cloudformation:us-east-1:613187931965:stack/amplify-mobilechatdemo-staging-55344/2328bf40-9562-11ed-819c-0e74c018307b",
-      "AmplifyAppId": "d12nj6t716f08e"
+      "AmplifyAppId": "d12nj6t716f08e",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-mobilechatdemo-staging-55344-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
+        "MobileChatDemo": {}
+      },
+      "function": {
+        "MobileChatDemoPostConfirmation": {
+          "deploymentBucketName": "amplify-mobilechatdemo-staging-55344-deployment",
+          "s3Key": "amplify-builds/MobileChatDemoPostConfirmation-46445242345249536a58-build.zip"
+        }
+      },
+      "api": {
         "MobileChatDemo": {}
       }
     }

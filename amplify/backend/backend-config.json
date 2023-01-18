@@ -25,7 +25,17 @@
   "auth": {
     "MobileChatDemo": {
       "customAuth": false,
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "MobileChatDemoPostConfirmation",
+          "triggerProvider": "Cognito"
+        }
+      ],
       "frontendAuthConfig": {
         "mfaConfiguration": "OFF",
         "mfaTypes": [
@@ -48,6 +58,31 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    }
+  },
+  "function": {
+    "MobileChatDemoPostConfirmation": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_MobileChatDemoPostConfirmation_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "MobileChatDemoPostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_MobileChatDemoPostConfirmation_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "MobileChatDemoPostConfirmation"
+        }
+      ]
     }
   }
 }
