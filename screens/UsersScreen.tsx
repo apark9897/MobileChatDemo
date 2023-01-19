@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, FlatList } from 'react-native';
-import { DataStore } from '@aws-amplify/datastore';
-import { Users } from '../src/models'
+import { DataStore } from 'aws-amplify';
+import { User } from '../src/models'
 import UserItem from '../components/UserItem';
 
 export default function UsersScreen() {
-  const [users, setUsers] = useState<Users[]>([]);
+  const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
-    const fetchUsers = async () => {
-      const fetchedUsers = await DataStore.query(Users);
-      setUsers(fetchedUsers);
-    };
-    fetchUsers();
+    const subscription = DataStore.observeQuery(User).subscribe(snapshot => {
+      const { items, isSynced } = snapshot;
+      setUsers(items);
+    });
   }, [])
 
   return (

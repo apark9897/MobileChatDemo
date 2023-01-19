@@ -3,7 +3,8 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    padding: 10
+    padding: 10,
+    backgroundColor: 'blue'
   },
   badgeContainer: {
     backgroundColor: '#3777f0',

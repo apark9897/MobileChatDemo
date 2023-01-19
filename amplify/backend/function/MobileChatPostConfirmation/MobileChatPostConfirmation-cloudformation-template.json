@@ -67,12 +67,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "MobileChatDemoPostConfirmation",
+            "MobileChatPostConfirmation",
             {
               "Fn::Join": [
                 "",
                 [
-                  "MobileChatDemoPostConfirmation",
+                  "MobileChatPostConfirmation",
                   "-",
                   {
                     "Ref": "env"
@@ -122,12 +122,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "MobileChatDemoPostConfirmation",
+            "MobileChatPostConfirmation",
             {
               "Fn::Join": [
                 "",
                 [
-                  "MobileChatDemoPostConfirmation",
+                  "MobileChatPostConfirmation",
                   "-",
                   {
                     "Ref": "env"

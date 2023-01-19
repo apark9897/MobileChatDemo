@@ -1,24 +1,22 @@
 export type AmplifyDependentResourcesAttributes = {
   "api": {
-    "MobileChatDemo": {
+    "MobileChat": {
       "GraphQLAPIEndpointOutput": "string",
       "GraphQLAPIIdOutput": "string",
       "GraphQLAPIKeyOutput": "string"
     }
   },
   "auth": {
-    "MobileChatDemo": {
+    "MobileChat": {
       "AppClientID": "string",
       "AppClientIDWeb": "string",
-      "IdentityPoolId": "string",
-      "IdentityPoolName": "string",
       "UserPoolArn": "string",
       "UserPoolId": "string",
       "UserPoolName": "string"
     }
   },
   "function": {
-    "MobileChatDemoPostConfirmation": {
+    "MobileChatPostConfirmation": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",

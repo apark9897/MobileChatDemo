@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Text, StyleSheet, Image, View, Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
-import { DataStore } from '@aws-amplify/datastore';
-import { ChatRooms, Users, UsersChatRooms } from '../../src/models';
-import { Auth } from 'aws-amplify';
+import { ChatRoom, User, ChatRoomUser } from '../../src/models';
+import { Auth, DataStore } from 'aws-amplify';
 
 export default function UserItem({ user }) {
   const navigation = useNavigation();
@@ -13,30 +12,41 @@ export default function UserItem({ user }) {
   const onPress = async () => {
     try {
       // Create a chat room
-      const newChatRoom = await DataStore.save(new ChatRooms({ newMessages: 0 }));
+      const newChatRoom = await DataStore.save(new ChatRoom({ newMessages: 0 }));
 
       // connect auth user with chat room
       const authUser = await Auth.currentAuthenticatedUser();
-      const dbUser = await DataStore.query(Users, authUser.attributes.sub);
+      const dbUser = await DataStore.query(User, authUser.attributes.sub);
+      console.log(dbUser);
       if (dbUser) {
-        await DataStore.save(new UsersChatRooms({
-          users: dbUser,
-          chatRooms: newChatRoom
+        await DataStore.save(new ChatRoomUser({
+          chatRoom: newChatRoom,
+          user: dbUser
         }))
 
         // connect clicked user with chat room
-        await DataStore.save(new UsersChatRooms({
-          users: user,
-          chatRooms: newChatRoom
+        await DataStore.save(new ChatRoomUser({
+          chatRoom: newChatRoom,
+          user
         }))
+
+        console.log('linked users to chatroom');
       }
 
       navigation.navigate('ChatRoom', { id: newChatRoom.id });
     } catch (err) {
       console.log('failed to create chatroom', err);
     }
-
   }
+
+  useEffect(() => {
+    // const printAuthUser = async () => {
+    //   const user = await Auth.currentAuthenticatedUser();
+    //   console.log(user);
+    // }
+    // printAuthUser();
+  })
+
   return (
     <Pressable onPress={onPress} style={styles.container}>
       <Image source={{ uri: user.imageUri }} style={styles.image} />

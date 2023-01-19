@@ -4,7 +4,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
-import { Amplify, Auth } from 'aws-amplify';
+import { Amplify, Auth, DataStore } from 'aws-amplify';
 import { Authenticator } from '@aws-amplify/ui-react-native';
 import config from './src/aws-exports';
 

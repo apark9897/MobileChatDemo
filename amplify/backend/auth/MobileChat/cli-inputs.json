@@ -1,10 +1,8 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "testAuthIdentityPool",
-    "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "mobile33dcb04f",
-    "userPoolName": "MobileChatDemo",
+    "resourceNameTruncated": "mobileb11a45d9",
+    "userPoolName": "MobileChat",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -17,21 +15,22 @@
     "emailVerificationSubject": "Verification code: {####}",
     "emailVerificationMessage": "Verification code: {####}",
     "defaultPasswordPolicy": false,
-    "passwordPolicyMinLength": 8,
+    "passwordPolicyMinLength": 6,
     "passwordPolicyCharacters": [],
     "requiredAttributes": [
-      "email"
+      "email",
+      "name"
     ],
     "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "Mobile33dcb04f_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "Mobileb11a45d9_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "33dcb04f",
-    "resourceName": "MobileChatDemo",
-    "authSelections": "identityPoolAndUserPool",
+    "sharedId": "b11a45d9",
+    "resourceName": "MobileChat",
+    "authSelections": "userPoolOnly",
     "serviceName": "Cognito",
     "usernameAttributes": [
       "email"
@@ -40,8 +39,6 @@
     "userPoolGroups": false,
     "userPoolGroupList": [],
     "adminQueries": false,
-    "thirdPartyAuth": false,
-    "authProviders": [],
     "usernameCaseSensitive": false,
     "useEnabledMfas": true,
     "authRoleArn": {
@@ -60,7 +57,7 @@
     "dependsOn": [
       {
         "category": "function",
-        "resourceName": "MobileChatDemoPostConfirmation",
+        "resourceName": "MobileChatPostConfirmation",
         "triggerProvider": "Cognito",
         "attributes": [
           "Arn",
@@ -74,10 +71,11 @@
       ]
     },
     "hostedUI": false,
+    "authProviders": [],
     "parentStack": {
       "Ref": "AWS::StackId"
     },
-    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PostConfirmation\",\n    \"lambdaFunctionName\": \"MobileChatDemoPostConfirmation\"\n  }\n]",
+    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PostConfirmation\",\n    \"lambdaFunctionName\": \"MobileChatPostConfirmation\"\n  }\n]",
     "permissions": []
   }
 }

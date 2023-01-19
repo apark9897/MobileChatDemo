@@ -1,6 +1,6 @@
 {
   "api": {
-    "MobileChatDemo": {
+    "MobileChat": {
       "dependsOn": [],
       "output": {
         "authConfig": {
@@ -23,7 +23,7 @@
     }
   },
   "auth": {
-    "MobileChatDemo": {
+    "MobileChat": {
       "customAuth": false,
       "dependsOn": [
         {
@@ -32,7 +32,7 @@
             "Name"
           ],
           "category": "function",
-          "resourceName": "MobileChatDemoPostConfirmation",
+          "resourceName": "MobileChatPostConfirmation",
           "triggerProvider": "Cognito"
         }
       ],
@@ -43,10 +43,11 @@
         ],
         "passwordProtectionSettings": {
           "passwordPolicyCharacters": [],
-          "passwordPolicyMinLength": 8
+          "passwordPolicyMinLength": 6
         },
         "signupAttributes": [
-          "EMAIL"
+          "EMAIL",
+          "NAME"
         ],
         "socialProviders": [],
         "usernameAttributes": [
@@ -61,26 +62,26 @@
     }
   },
   "function": {
-    "MobileChatDemoPostConfirmation": {
+    "MobileChatPostConfirmation": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
   },
   "parameters": {
-    "AMPLIFY_function_MobileChatDemoPostConfirmation_deploymentBucketName": {
+    "AMPLIFY_function_MobileChatPostConfirmation_deploymentBucketName": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "MobileChatDemoPostConfirmation"
+          "resourceName": "MobileChatPostConfirmation"
         }
       ]
     },
-    "AMPLIFY_function_MobileChatDemoPostConfirmation_s3Key": {
+    "AMPLIFY_function_MobileChatPostConfirmation_s3Key": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "MobileChatDemoPostConfirmation"
+          "resourceName": "MobileChatPostConfirmation"
         }
       ]
     }

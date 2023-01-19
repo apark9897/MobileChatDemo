@@ -1,29 +1,29 @@
 {
   "staging": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-mobilechatdemo-staging-55344-authRole",
-      "UnauthRoleArn": "arn:aws:iam::613187931965:role/amplify-mobilechatdemo-staging-55344-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::613187931965:role/amplify-mobilechatdemo-staging-55344-authRole",
+      "AuthRoleName": "amplify-mobilechat-staging-233739-authRole",
+      "UnauthRoleArn": "arn:aws:iam::613187931965:role/amplify-mobilechat-staging-233739-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::613187931965:role/amplify-mobilechat-staging-233739-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-mobilechatdemo-staging-55344-deployment",
-      "UnauthRoleName": "amplify-mobilechatdemo-staging-55344-unauthRole",
-      "StackName": "amplify-mobilechatdemo-staging-55344",
-      "StackId": "arn:aws:cloudformation:us-east-1:613187931965:stack/amplify-mobilechatdemo-staging-55344/2328bf40-9562-11ed-819c-0e74c018307b",
-      "AmplifyAppId": "d12nj6t716f08e",
-      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-mobilechatdemo-staging-55344-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+      "DeploymentBucketName": "amplify-mobilechat-staging-233739-deployment",
+      "UnauthRoleName": "amplify-mobilechat-staging-233739-unauthRole",
+      "StackName": "amplify-mobilechat-staging-233739",
+      "StackId": "arn:aws:cloudformation:us-east-1:613187931965:stack/amplify-mobilechat-staging-233739/187a5ee0-9789-11ed-8e9e-0e90c955c297",
+      "AmplifyAppId": "d1wmfmzfmpz4b1",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-mobilechat-staging-233739-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
-        "MobileChatDemo": {}
+        "MobileChat": {}
       },
       "function": {
-        "MobileChatDemoPostConfirmation": {
-          "deploymentBucketName": "amplify-mobilechatdemo-staging-55344-deployment",
-          "s3Key": "amplify-builds/MobileChatDemoPostConfirmation-6a46586369514b663841-build.zip"
+        "MobileChatPostConfirmation": {
+          "deploymentBucketName": "amplify-mobilechat-staging-233739-deployment",
+          "s3Key": "amplify-builds/MobileChatPostConfirmation-52586e73693549564a46-build.zip"
         }
       },
       "api": {
-        "MobileChatDemo": {}
+        "MobileChat": {}
       }
     }
   }
